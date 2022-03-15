@@ -1,0 +1,20 @@
+L2 課程重點有以下七點：
+-
+1.) Machine Learning 的三大步驟：
+[設定 alpha (初始化變數數值)] -> 
+[做很多次的 gradient descent] -> 
+[觀察 Cost vs Iteration 的圖是否有看到 plateau]
+-
+2.) 初始的變數數值不是重點！只要 iteration 夠多，一定可以找到該模型的最佳解
+-
+3.) 在 y=theta*x 這個單變數模型的極限 cost == 5.0 左右
+在 y=theta*x+b 這個雙變數的模型極限可以到達 3.5 左右
+也就是說，通常越複雜的模型可以達到越低的 cost
+-
+4.) 多變數的 gradient descent 使用 steepest descent 可以有更平滑的更新，缺點是更新速度比較慢 🤏
+-
+5.) 我們可以自己製造高維度的 features (把資料數據平方、三次方、四次方、...) 稱之為 Polynomial Features (degree 2, 3, 4, ..)
+-
+6.) 然而，高維度的 feature 數值不穩定，不好做 training！因此，未來在做 Machine Learning 前一定會先對資料做 Normalization
+-
+7.) 上課範例 linear_regression_quadratic_function.ipynb 的檔案解答在連結(請大家自己 train, 看曲線在每一次更新之後的變化情況)：

@@ -1,0 +1,20 @@
+[ SC201 - L10 - #重點回顧 ]
+-
+各位同學晚安! 抱歉來晚了 L10 課程的重點有以下八點：
+-
+1). BGD 運用 Python Vectorization 的特性可以讓運算超爆快 🔥 而且它不容易 overfit ( 換句話說，Training Error 很難到 0) 
+-
+2). SGD 一筆一筆餵給我們 AI 演算法很容易 overfit（所以要搭配 regularization）! 為了各取 SGD 與 BGD 的優點，我們衍伸出了一個介於他們中間的的演算法：MBGD (Mini Batch Gradient Descent)
+-
+3). MBGD 有一個 hyperparameter 需要調控 - batch size - 簡單來說就是一次要餵給我們演算法多少筆資料？（一次 1 筆就是 SGD / 一次全部就是 BGD）
+-
+4). 課程隨後來到了深度學習的核心！我們講解 Neural Network 的架構邏輯：把同樣的 features 用不同的 weights 排列組合出新的 features 再餵給下一層來輸出預測結果（請參照 L10 上課投影片）
+-
+5). 2 Layer NN 的架構有三個部分：
+Input Layer -> Hidden Layer -> Output Layer
+-
+6). 為了讓 NN 產生高維度 features, 我們要在每一層排列組合結束後將輸出從 linear 變成 non linear！從線性轉成非線性的方程式我們稱之為 activation functions
+-
+7). Activation Functions 的演進歷史是從 sigmoid -> tanh -> ReLU. 現在 Deep Learning 大家都唯一使用 ReLU了 (就是簡單地跟 0 比較誰是 Max。方便又迅速的操作呢 🤓)
+-
+8.) 課程最後進入 2-Layer NN 的架構圖，以及它大致的數學式表達法。第十一堂課一開始也會再講一次喔！請大家放心

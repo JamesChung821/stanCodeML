@@ -1,0 +1,17 @@
+[SC201 - L4 - #重點回顧]
+-
+1.) Linear regression 與 logistic regression 的 dJ_dtheta 微分項都是大一統的公式「∑ (hi-yi)xi/m」
+-
+2.) Logistic regression 可以分成 x 對 y 的作圖以及 J 對 h 的作圖 （就跟 Linear regression 一樣，分成 x 對 y 的作圖以及 J 對 θ 的作圖）
+-
+3.) 當 yi==1 時，loss_function = -log(hi) ; 
+    當 yi == 0 時，loss_function = -log(1-hi)
+    可以透由方程式平移得到！希望可以幫助同學建立直覺
+-
+4.) Gradient Descent 可以分成「Batch Gradient Descent」以及「Stochastic Gradient Descent」！兩者的利弊優劣歡迎參考上課筆記
+-
+5.) 從作業一我們累積的概念發現：每一個 feature (x_i) 都可以給它一個 weight (w_i) 去調控。所以未來同學如果拿到任何 data, 只要照著流程走，一定可以讓電腦學出每個 weight（再也不用自己調整 weight 了🤩）
+-
+6.) 上課範例 titanic_survived.py 解答歡迎參考下方連結檔案：
+-
+7.) 歡迎大家調整 alpha, 調整 epoch, 或是印出我們最終的「金鑰」weights 看看有沒有什麼秘密在裡面👀

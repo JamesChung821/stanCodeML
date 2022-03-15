@@ -1,0 +1,29 @@
+[ SC201 - L12 - #重點回顧 ]
+-
+各位同學 hello!
+上完了 NN 最難的數學後，stanCode 團隊把所有概念全都寫入 Assignment 4-2 💻  再麻煩同學們及早開始。做完大家就正式學會 Neural Network 了 😊 有問題歡迎明天 Office Hour 來找我聊聊
+L12 的重點有以下8點：
+-
+1.) 我們從 binary 演進到 multi-class 把所有分類問題都變成了大一統的理論「Softmax」, 而輸入 Softmax 裡面的東西稱為 Class Score (使用符號為”f“) 
+-
+2.) 要計算 Softmax 分類的 Cross Entropy Loss, 我們需要對 True Label 的項目取 -log(h_trueLabel). 在做作業的時候我們也會教大家如何在一個大矩陣裡找到每一個影像的 True Label 項目
+-
+3.) Softmax 的微分會有兩種情況 - True Label 跟 Not true label
+前者的項目在微分項會多一個「-1」請大家在寫作業特別注意👀
+-
+4.) 作業使用的 dataset 為「CIFAR10」, 裡面有 60000 影像, 共十個類別. 為此我們使用了 Google 提供的免費 GPU 雲端運算服務 Google Colab 來讓我們的運算加速 🏃‍♀️🏃
+-
+5.) 我們介紹了第 1 個 Recipe for Training NN <Data Preprocessing>:
+在 np 裡面做標準化的程式碼＆概念為何? 以原點為中心的球型數據點會非常好 Train 👍
+-
+6.) 我們介紹了第 2 個 Recipe for Training NN <Weight Initialization>: 
+為了在深度學習裡避免 Ki 的數值每次 relu 結束後都越來越接近零，臉書工程師 Kaiming He 發明了演算法 Kaiming Initialization 讓數值與 Wk 相乘後不會越來越接近 0 -> Wk = np.random.rand(N_in, N_out)*np.sqrt(2/N_in)
+-
+7.) 為了讓深度學習演算法的層數越來越多（越來越深），我們要在每次 Activation 前加入一層 Normaization Layer 確保數值穩定
+(K = (K-np.mean(K))/(np.std(K)))！
+因此以後我們越來越深的 NN 架構都會是：(affine-norm-relu) * N
+-
+8.) 為了讓 learning rate (alpha) 到最佳解附近可以越來越小，我們可以採取的策略有三個：
+    * Time Decay (new_alpha = alpha / epoch)
+    * Step Decay (alpha *= 0.5 if epoch % 10 == 0)
+    * Exponential Decay (new_alpha = alpha * exp(-0.01*epoch))

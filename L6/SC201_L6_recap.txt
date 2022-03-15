@@ -1,0 +1,30 @@
+[ SC201 - L6 - #重點回顧 ]
+-
+各位同學晚安！
+剛剛作業三已經 Po 在社團了～ (期待看到大家的 Kaggle 競賽 🔥)
+L6 的重點回顧有以下9點：
+-
+1.) pandas 的資料結構分成 1D & 2D. 前者稱為 Series, 後者稱為 DataFrame
+-
+2.) 首先我們可以用 data = pd.read_csv(FILE_PATH) 產生的 DataFrame 直觀地對 missing data (或又稱為 NaN) 處理！
+-
+3.) 我們發現更進階的資料處理為 Standardization (之前學的是 Normalization) 可以讓資料呈現高維度的一顆"以零為基準"的球
+-
+4.) 要對 DataFrame 做 Standardization 只要簡單地呼叫：
+standardizer = preprocessing.StandardScaler( ) 再使用 
+x_train = standardizer.fit_transform(x_train) 即可
+-
+5.) 請注意：在 Training mode 我們要使用 fit_transform(x_train) 而在 Test mode 我們要使用 transform(x_test)
+-
+6.) 要做 Training 只要簡單的先把 hypothesis function 叫出來，再對 data 做 fit 即可！如下所示：
+h = linear_model.LogisticRegression( )
+classifier =  h.fit(x_train, y)
+-
+7.) 在 Test mode 的時候，我們要使用 Train 好的 classifier 去做預測！如下所示 ：
+predictions = classifier.predict(x_test)
+-
+8.) 要抓出 Degree 2 PolynomialFeatures 只要簡單地呼叫下方的程式碼即可：
+poly_feature_extractor = preprocessing.PolynomialFeatures(degree=2)
+-
+9.) 最後，課程停在 One-hot encoding 這個全新的觀念。為什麼我們會想使用 ? 因為很多 data 其實在連續區間是不合理的（像是 Pclass 數值應該都是整數 1, 2, 3. 而不會出現 2.7, 2.8 這種連續的 float 數值）
+因此，我們把每個艙等的資料獨立出來，成為個別的類別，再下去 train，會比較符合資料想表達的概念

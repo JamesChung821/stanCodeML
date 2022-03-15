@@ -1,0 +1,19 @@
+[ SC201 - L8 - #重點回顧 ]
+-
+機器學習課程結束了🤖️🎉 希望這 8 堂課有幫大家打下扎實的理論基礎 🪨 歡迎大家運用所學融會貫通參與 Kaggle 競賽與全班 PK 💪
+L8 的重點回顧有以下 7 點：
+-
+(1). Decision Tree 使用 Gini Impurity 將 data 分群(取計算最低的數值當作最好的分群依據)。結合上次課程提到的 Graphviz 就可以追蹤出每個特徵的重要程度＆分類過程。Gini Impurity 的計算方法為：1-P(yes)^2-P(no)^2，而我們還有另外一個名為 Entropy (亂度) 的切分依據，公式為：-P(yes)*log(P(yes))-P(no)*log(P(no))，也是可以找出亂度較小的特徵來幫助我們 decision tree 做選擇
+-
+(2). Decision Tree 要怎麼處理 Missing Data? 歡迎參考連結影片：https://www.youtube.com/watch?v=wpNl-JwwplA
+-
+(3). 再來我們介紹了 ensemble learning 裡面的第一個重要模型：RandomForestClassifier。他優化了 DecisionTree 習慣 overfit data 的缺點，讓 Bootstrapped datasets 做出的各種不同 trees 投票表決 🙋 做出 Bootstrapped datasets 的方法為 Sampling with replacement。而最後再透過表決預測的這個方法我們會稱之為 Bagging
+-
+(4). ensemble learning 裡面還有另外一個重要模型：BaggingClassifier。使用 Bootstrapped datasets 去做  LogisticRegression 後，再投票表決最後的答案。為了不要 overfit，我們在 regularize 上會使用 max_features & max_samples 這兩個介於 0.0~1.0 的比例去調控 Bootstrapped datasets 選出來具有多少 % 的 features & sample 數量
+-
+(5). 再來課程來到了 ML 非常著名的模型 ✨SVM✨ 首先看到了什麼是 Maximal Margin Classifier, 再讓大家看什麼是 Support Vector Classifier。前者不允許 mis-classification，後者使用 soft margin 來允許 mis-classification。然而，資料在使用 soft margin 切割時很多時候會看似無法執行（像是 XXOOOOOOXX 要把X/O分開）。但資料科學家想到一個妙招💡就是將我們原有的 data ”升維“，在較高維度的空間執行 SVC 的 soft margin 劃分，而我們就稱這個觀念為 Support Vector Machines
+-
+(6). Support Vector Machines 將資料升維的方法為 kernel function。常見的 kernel 有 linear kernel, polynomial kernel, radial kernel, ... 詳細關於 kernel 數學的介紹，歡迎參考下方影片：https://www.youtube.com/watch?v=Toet3EiSFcM
+-
+(7). 最後課程停在一個將資料分群的 Unsupervised Learning Algorithm: K-means clustering. 
+Unsupervised Learning 是不用提供答案的！他會自己找到分群的中心點＆群體👥👥 使用 sklearn 裡面的 cluster.KMeans 算出來分群後，還可以搭配 PCA 將資料降維至 3D 畫出圖形🎨 看看資料與中心點的關係

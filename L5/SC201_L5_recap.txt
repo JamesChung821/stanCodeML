@@ -1,0 +1,18 @@
+[ SC201 - L5 - #重點回顧 ]
+-
+1.) Machine Learning 流程很重要的就是「Training」以及「Testing」。我們對 D_train 做的處理也要對 D_test 做一樣的處理
+-
+2.) Training 得到的 weights 要跟 D_test 相乘得到預測結果！我們今天將解答輸出成一個檔案🥳🥳 並上傳至一個數據競賽的網站 Kaggle 得到準確率
+-
+3.) 我們發現 degree 1 的模型準確率 76.794% 、只用性別預測的準確率 76.555%、而使用 degree 2 的模型準確率 76.315%！
+degree 2 的準確率在 D_test 的表現竟然比degree 1 還糟，這告訴我們一個非常重要的觀念：Overfitting
+-
+4.) 我們嘗試了一個非常重要的演算法「regularization」解決 Overfitting! 在 Loss Function 後面多一項「係數總和」，讓每一次的更新不只要「預測 hi 趨近真實值 yi 」，更要儘量讓係數總和小、降低 loss
+-
+5.) 解決 Overfitting 還有「Reduce Features」, 「Early Stopping based on D_dev」, 以及「Cross Validation」三招！大家歡迎嘗試看看怎麼跟上課範例結合
+-
+6.) Hyperparameter 就是機器無法學習的變數，而 ML 裡面工程最浩大的莫過於「Hyperparameter Tuning」
+-
+7.) 在「真實世界房價預測」的實例，我們發現可以用 (h-y)**2 去乘上一個 (sign(h-y) + c)**2 來達到「Break Symmetry」的效果！讓低房價的預測曲線斜率變大、高房價的預測曲線斜率變小
+-
+8.) 「High Bias Problem」、「High Variance Problem」要怎麼解決？這個在做 ML project 的時候非常實用！大家未來在做 project 的時候可以回來複習一下 🥳

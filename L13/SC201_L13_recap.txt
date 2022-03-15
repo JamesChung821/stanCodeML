@@ -1,0 +1,33 @@
+[ SC201 - L13 - #重點回顧 ]
+-
+要怎麼 Train 出好的 NN 呢 🤔
+L13 的重點有以下十點：
+-
+1.) <Optimization> 
+首先要請同學了解 Exponentially Weighted Averages (Moving Averages) 的原理。很多 Optimization 的方法都是建構於這個概念之上 🏗️
+在深度學習 non-convax 的曲線中，使用 <SGD with momentum> 讓更新模擬一顆球沿著曲面滾動的行為！這樣可以輕易逃脫 local minimum / saddle point👍 然而為了加速收斂，我們會使用 Nesterov momentum 去預判未來的走勢。
+-
+2.) <Optimization>
+再來，為了讓每個維度在更新的時候都可以走「差不多的步伐」，我們使用了<AdaGrad> 來讓 dJ/dw 在每一個維度下的都可以更新差不多的數值。然而，AdaGrad 無法跑太多次，因為分母的數值會越來越大、讓 alpha 越來越接近零。因此，我們會使用 AdaDelta 或是 RMSProp 加入 Moving Averages 的概念解決 AdaGrad 碰到的問題
+-
+3.) <Optimization>
+最後，若我們採取 SGD with momentum + RMSProp 我們會稱之為 Adam! 據說是最好用的 Optimization Algorithm 👀 下次上課我們來試試！
+-
+4.) 下方連結網站對各式各樣的 Optimization 演算法有非常詳盡的敘述！再麻煩同學有空參考一下～ Optimization 真的是一門學問！但之後使用的 PyTorch 都幫我們處理好了大家別擔心 😌
+https://ruder.io/optimizing-gradient-descent/...
+-
+5.) Regularization 有三個常見的絕招：<Early Stopping>, <Regularization Loss>, <Dropout> 他們彼此都有利弊優劣！但 NN 一律使用 Dropout (下方解釋！)
+-
+6.) Dropout 是製造出 p 的機率讓一些 neurons 失效。而我們上課有看到一個非常重要的小技巧：
+為了讓 dropout 之後的數值維持原本的尺度，必須除以 p! 以確保數值的尺度在 Training 與 Testing 一致
+跟演算法玩「捉迷藏」這招非常奏效！再麻煩同學幫我們詳讀 L12 上課範例那份檔案裡的文字＆程式碼～
+-
+7.) 再來課程進到「電腦視覺」的部分！我們使用一個叫做 Convolution (以下簡稱 Conv) 的技巧萃取影像的特徵。由於 Effective Receptive Field 的關係，我們可以在 Conv 層數越多的情況下萃取出越大範圍的 pixels 特徵
+-
+8.) 我們透過 Effective Receptive Field 發現了 kernel_size = 3 足以讓我們用少少的 parameters 訓練出很強大的模型 💪
+-
+9.) 為了讓每一次 Conv 後圖片尺寸不會受到影響，我們介紹了一個名為 Zero Padding 的技巧！也因此讓邊邊角角的特徵可以被萃取出來 
+-
+10.) CNN 每一次都用 filter 貫穿每一個 Channels (如果用 RGB 彩色影像的話起始一定是 3 )。下一層的 Channel 有幾個？那就要看大家選擇多少個 filters 疊起來了
+-
+下次上課我們會講完所有 CNN 的概念請同學們敬請期待!

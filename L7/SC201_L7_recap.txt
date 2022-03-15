@@ -1,0 +1,22 @@
+[ SC201 - L7 - #重點回顧 ]
+-
+各位同學新年快樂！
+作業三還有一個禮拜的時間～再麻煩大家加把勁了 💪
+期待看到大家的 Kaggle 競賽 🔥
+L7 的重點回顧有以下7點：
+-
+(1). 如何將我們在第二份的爛番茄影評作業從 Logistic Loss 變成 Hinge Loss? 再麻煩大家了解一下~ 下一堂課我們教機器學習最重要的模型之一 SVM 會用到喔！
+提醒作業二還沒繳交的同學請參照我今天上傳的作業二解答一步一步地把它完成～ 所有作業都繳交才能參加我們課程含金量最高的 poster session 喔 🥳
+-
+(2). Logistic Loss 與 Hinge Loss 各有什麼利弊優劣？前者可以在接近最佳解時細膩調整參數，後者可以快速抵達最佳解（但 validation 準確率略遜一籌）。為什麼會有這種差異？同學們可以從他們數學式去理解 🧐 其他的優缺點再麻煩大家參照上課講義 📖
+-
+(3). 再來我們課程進入到第二個主題：PCA。
+PCA 最重要的觀念就是「降維」- 將高維度的 data 變成"新"的低維度 data。雖然可以讓 Training 變快，但 data 的資訊量會因此減少。因此我們後來才會想要再 PCA 之後加上 degree 2 的操作來「升維」，提高準確率
+-
+(4). 使用 PCA 一定要記得先 standardize 讓 data 在每個維度的平均為 0。然後記得一定也要對 test data 做一模一樣的事，以保持 training data/test data 的一致性。想知道 PCA 的數學是怎麼把資料從高維度的空間投射到低維度？歡迎同學參考一位我超喜歡的 North Carolina State 教授講解影片：https://youtu.be/FgakZw6K1QQ
+-
+(5). 本日課程的第三個主題我們看到了一個簡單又強大的模型 Decision Tree 🌲 它不僅可以將每個 Feature 切分的過程視覺化，也可以讓我們迅速分類 data。視覺化的方法為 tree.export_graphviz 並將產生的資訊貼到 webgraphviz.com 上
+-
+(6). 然而，Decision Tree 到底怎麼選擇切割的標準？簡單來說，他使用的是一個叫 Gini Impurity 的方法 ; 詳細到底怎麼計算 Gini Impurity 我們下一堂課揭曉 🎦 
+-
+(7). Decision Tree 會把資料切割成一個一個空間中的小區塊。然而，這個方法非常容易 overfit。因此我們可以用 tree.DecisionTreeClassifier( max_depth=6 ) 來調控樹高，強制這棵樹不要把每一筆 data 都記起來、正確分類 (還有很多方法歡迎參照上課筆記 📒)

@@ -1,0 +1,16 @@
+1.) 讓演算法更新 θ 的方法有「全部 data 看完再一次更新的 Batch Gradient Descent」以及「每一筆 data 都更新一次的 Stochastic Gradient Descent」。大家在L1, L2上課範例看的都是前者 (BGD)，而作業會讓同學試試看後者 (SGD) 🔥
+-
+2.) 機器學習裡，Supervised Learning 的定義是「data 有正確的 label」，底下分成「Regression Problem」以及「Classification Problem」
+-
+3.) 用直線方程式來解 Classification Problem 會遇到三個問題可以用 sigmoid 來解決
+-
+4.) 折彎的線性方程我們稱之為 logistic regression，把 theta*x 丟入 σ(theta*x)
+-
+5.) Cost Function 一定要是一個 convex function! 不然在 non-convex 的曲線下是無法確保每次都找到global minimum
+-
+6.) Classification Problem 要使用「J = -∑(yi*log(hi)+(1-yi)*log(1-hi)) / m」才會是 convex function
+-
+7.) 上式會分成 yi==1 的情況 ; yi==0 的情況而優化兩條不同的曲線
+-
+8.) 最後我們發現一個大一統的理論！不管是在 linear regression 還是在 logistic regression，學習 theta 的方法都是：
+theta = theta - alpha (∑(hi-yi)xi) / m)

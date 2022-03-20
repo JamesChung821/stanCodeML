@@ -1,0 +1,20 @@
+[ SC201 - L14 - #重點回顧 ]
+-
+恭喜各位同學了解了 CNN 大部分的架構＆概念
+希望課程有幫助各位同學更清楚 Project 該使用什麼技巧🔥
+L13 的重點回顧有下列 4 點：
+-
+1.) 使用 PyTorch 打造 CNN 架構我們呼叫：
+model = nn.Sequential(
+         nn.Conv2d((in_channel, out_channel, kernel_size=3, padding=1),
+         nn.ReLU(),
+         ...
+)
+請務必追蹤每一次處理後圖片的寬、高與 channel 數目，避免 error
+-
+2.) 為了減少並選出最重要的 features, nn.MaxPool2d 可以幫我們達到！而 nn.MaxPool2d 使用的 kernel_size 是 2, stride 是 2
+-
+3.) 2015 年，2 位 google 工程師發表了 BatchNorm 解決 Internal Covariate Shift！論文原文可以參照下方連結 (大家可以閱讀看看！不會太難)：
+https://arxiv.org/abs/1502.03167
+-
+4.) 除了上課講的 BatchNorm, 其實還有其他的 Normalization Algorithms! 下方文章提供大家參考：https://medium.com/.../normalization-techniques-in-deep...

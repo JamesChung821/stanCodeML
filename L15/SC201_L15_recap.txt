@@ -1,0 +1,38 @@
+[ SC201 - L15 - #重點回顧 ]
+Hi 大家！
+恭喜完成所有深度學習在影像上的架構＆觀念。L15 的重點回顧有以下 12 點
+-
+1.) PyTorch 在 Data Pre-processing 使用 T.Compose 裝入所有對資料的前處理操作！例如影像資料轉成 Tensor 的 T.ToTensor()、改變大小的 T.Resize((64, 64))、還有標準化的 T.Normalize(mean, std)
+-
+2.) PyTorch 幫大家輸入資料的 dset.ImageFolder 把同學們電腦硬碟的資料讀取並轉成 [(Tensor1, label1), (Tensor2, label2), ...]
+-
+3.) PyTorch 還可以幫我們製作 Mini-batches! 這樣我們在 Trainig 的時候就可以使用效果最好的 Mini-batch Gradient Descent 👍 只要把輸入的資料丟入 DataLoader 即可
+-
+4.) nn.CrossEntropyLoss( ) 其實可以拆解成 nn.LogSoftmax( ) 加上 nn.NLLLoss( )。這個可以與作業 4-2 的觀念結合，讓大家對深度學習理論更熟悉 💪
+-
+5.) optimizer 在每一次要更新模型前，要先呼叫 optimizer.zero_grad()。等模型呼叫 loss.backward() 之後，再呼叫 optimizer.step() 計算此次更新的微分數值
+-
+6.) 模型在 Training 的時候要記得呼叫 model.train() 來讓只有在 Training 才能進行的模組（如 Dropout）發揮功能。若想要 Evaluate Predictor，記得呼叫 model.eval() 並在 code 的上方加入 with torch.no_grad() 避免電腦繼續進行微分運算
+-
+7.) 我們完成了一個「貓狗辨識系統」🎉🎉🎉 若準確率要提高，我們就必須要有「用更深的 CNN」以及「更多的 data」！歡迎同學下載下方連結內的貓狗圖片，總共 25,000 張！大家可以自己試試怎麼分成 Training Set 與 Test Set 
+https://drive.google.com/.../1uYor67p0jVbdauw.../view...
+-
+8.) 為了讓 Data 變多、提升 Training 的準確度，我們可以使用 Data Augmentation 的技巧！裡面包含了 RandomCrop, RandomRotate, ... 
+-
+9.) 再來我們介紹 PyToch 比 nn.Sequential 更有彈性的物件導向寫法。首先大家要承襲 nn.Module 來讓之後我們呼叫的模型物件都是一個 Python Callable Object（意思是說，當我們呼叫 model(input)，電腦會自動呼叫 forward 這個 method）。在 class constructor 記得要將架構中有 weights 的部分加入 self（如 nn.Conv2d, nn.Linear），再把我們之前寫在 nn.Sequential 的架構全部寫在 def forward(self, x) 區間
+-
+10.) 經典 Deep Learning 架構（一）ResNet
+[ 影片講解 part.1 ] 
+https://youtu.be/ZILIbUvp5lk
+[ 影片講解 part.2 ]
+https://youtu.be/RYth6EbBUqM
+-
+11.) 經典 Deep Learning 架構（二）GoogleNet
+[ 影片講解 part.1 - 使用 1x1 kernel ] 
+https://youtu.be/c1RBQzKsDCk
+[ 影片講解 part.2 ]
+https://youtu.be/C86ZXvgpejM
+-
+12.) 以上的所有經典架構我們都可以使用 Transfer Learning 的技巧併入大家的程式裡！歡迎大家自己探索看看這些強大的模型 🤩 
+-
+期末專題加油！有任何問題歡迎跟我說 😃

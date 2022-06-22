@@ -31,9 +31,11 @@ def main():
     k_means = cluster.KMeans(n_clusters=2)
     k_means.fit(x_train)     # No labels
     # print(k_means.cluster_centers_)
+    # print(k_means.labels_)
+    # print(k_means.get_params())
     pca = decomposition.PCA(n_components=3)
     x_train_3d = pca.fit_transform(x_train)
-    # print(x_train_3d)
+    print(x_train_3d)
     x = list(ele[0] for ele in x_train_3d)  # Python comprehension
     y = list(ele[1] for ele in x_train_3d)
     z = list(ele[2] for ele in x_train_3d)

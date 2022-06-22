@@ -1,0 +1,9 @@
+[ SC201_L16 #重點回顧 ]
+-
+Hi 大家，
+最後一堂課的精華就在下方連結影片跟大家說明 🤩 相信看完之後大家一定可以了解 PyTorch 每一行 code 的原理 ＆ RNN 的實作細節 💪
+(本來這個是 SC201 Assignment 6 ... 但怕大家太忙，所以改成補充。但請同學有空的話可以撥個 30 分鐘，跟影片中的我一起寫 code 💻 完全掌握 CNN & RNN 撰寫的心法)
+連結 👉 https://youtu.be/zXLAeat_b7g
+-
+另外，若同學們看完上方連結影片，歡迎參考下方超詳盡 LSTM & GRU 說明部落格連結（聽不懂沒關係）：
+https://towardsdatascience.com/illustrated-guide-to-lstms...
